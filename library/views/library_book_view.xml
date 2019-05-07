@@ -41,9 +41,9 @@
             </field>
         </record>
 
-        <menuitem id="library_book_main_menu" name="Library" sequence="1"/>
-        <menuitem id="library_book_sec_menu" name="Library" parent="library_book_main_menu" sequence="1"/>
-        <menuitem id="library_book_menu" name="My Books" parent="library_book_sec_menu" action="action_library_book" sequence="1"/>
+        <menuitem id="library_book_main_menu" name="Libreria" sequence="1"/>
+        <menuitem id="library_book_sec_menu" name="Libros" parent="library_book_main_menu" sequence="1"/>
+        <menuitem id="library_book_menu" name="Mis Libros" parent="library_book_sec_menu" action="action_library_book" sequence="1"/>
 
 
 
