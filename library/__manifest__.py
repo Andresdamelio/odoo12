@@ -24,8 +24,8 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        # 'views/views.xml',
+        'security/ir.model.access.csv',
+        'views/library_book_view.xml',
         # 'views/templates.xml',
     ],
     'installable' : True,

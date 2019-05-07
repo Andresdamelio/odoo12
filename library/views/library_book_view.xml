@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <!-- Formulario de Libro -->
+        <record id="view_form_library_book" model="ir.ui.view">
+            <field name="name">Library View Form</field>
+            <field name="model">library.book</field>
+            <field name="arch" type="xml">
+                <form string="Book Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Lista de Libro -->
+        <record id="view_tree_library_book" model="ir.ui.view">
+            <field name="name">Library Book Tree</field>
+            <field name="model">library.book</field>
+            <field name="arch" type="xml">
+                <tree string="Book Tree">
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Menu de acciones -->
+        <record id="action_library_book" model="ir.actions.act_window">
+            <field name="name">Book</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">library.book</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Crear nuevos libros
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="library_book_main_menu" name="Library" sequence="1"/>
+        <menuitem id="library_book_sec_menu" name="Library" parent="library_book_main_menu" sequence="1"/>
+        <menuitem id="library_book_menu" name="My Books" parent="library_book_sec_menu" action="action_library_book" sequence="1"/>
+
+
+
+
+    </data>
+</odoo>
