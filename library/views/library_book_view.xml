@@ -10,6 +10,7 @@
                         <group>
                             <field name="name"/>
                             <field name="description"/>
+                            <field name="category_id" widget="many2many_tags"/>
                         </group>
                     </sheet>
                 </form>

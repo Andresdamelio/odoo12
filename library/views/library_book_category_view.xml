@@ -11,6 +11,9 @@
                             <field name="name"/>
                             <field name="description"/>
                         </group>
+                        <group>
+                            <field name="book_id"/>
+                        </group>
                     </sheet>
                 </form>
             </field>
