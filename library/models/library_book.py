@@ -10,6 +10,11 @@ class LibraryBook(models.Model):
     isbn = fields.Char(string="ISBN")
     description = fields.Text(string="Description")
 
+    # campos calculados
+    categ_count = fields.Integer(
+        string="Numero de categorias",
+        compute="_count_categ")
+
     """"
     =================== Como crear una relacion Many2one ===================
     """
@@ -38,9 +43,12 @@ class LibraryBook(models.Model):
     ]
 
     # Como definir un constrain con python
-    @api.constrains()
+    @api.constrains('isbn')
     def check_isbn(self):
-        isbn = self.search([['id', '=', self.id]]).mapped("isbn")
+        isbn = self.search([['id', '!=', self.id]]).mapped("isbn")
         if self.isbn and self.isbn in isbn:
             raise exceptions.ValidationError("Isbn duplicado")
 
+    def _count_categ(self):
+        for book in self:
+            book.categ_count = len(book.category_id)
