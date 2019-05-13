@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="library_book_1" model="library.book">
+            <field name="name">El caballero de la armadura oxidada</field>
+            <field name="isbn">ecao-1501</field>
+            <field name="description">El Caballero de la armadura oxidada es una novela del escritor estadounidense Robert Fisher y en el género de autoayuda y motivación por elementos de humor que emplea en sus obras.</field>
+        </record>
+
+         <record id="library_book_2" model="library.book">
+            <field name="name">Cien años de soledad</field>
+            <field name="isbn">cas-0012</field>
+            <field name="description">Cien años de soledad es una novela del escritor colombiano Gabriel García Márquez, ganador del Premio Nobel de Literatura en 1982. Es considerada una obra maestra de la literatura hispanoamericana y universal</field>
+        </record>
+    </data>
+</odoo>
