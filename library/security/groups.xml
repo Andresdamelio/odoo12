@@ -2,7 +2,11 @@
 <odoo>
     <data>
         <record id="group_library_user" model="res.groups">
-            <field name="name">library Users</field>
+            <field name="name">Library Users</field>
+        </record>
+
+         <record id="group_library_manager" model="res.groups">
+            <field name="name">Library Managers</field>
         </record>
     </data>
 </odoo>
