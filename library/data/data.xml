@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+    <data noupdate="1">
         <record id="library_book_1" model="library.book">
             <field name="name">El caballero de la armadura oxidada</field>
             <field name="isbn">ecao-1501</field>
