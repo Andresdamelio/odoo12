@@ -34,7 +34,7 @@
                 </tree>
             </field>
         </record>
-
+d
         <!-- Menu de acciones -->
         <record id="action_library_book" model="ir.actions.act_window">
             <field name="name">Book</field>
@@ -51,7 +51,7 @@
         <menuitem id="library_book_main_menu"
                   name="Libreria"
                   sequence="1"
-                  groups="library.group_library_user,library.group_library_manager"/>
+                  groups="library.group_library_user"/>
 
         <menuitem id="library_book_sec_menu"
                   name="Libros"

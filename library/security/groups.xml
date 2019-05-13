@@ -7,6 +7,7 @@
 
          <record id="group_library_manager" model="res.groups">
             <field name="name">Library Managers</field>
+             <field name="implied_ids" eval="[(4, ref('group_library_user'))]"/>
         </record>
     </data>
 </odoo>
