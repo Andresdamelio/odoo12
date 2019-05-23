@@ -28,21 +28,22 @@ class PurchaseOrderLineWizard(models.TransientModel):
 
         return res
 
+    @api.multi
     def create_purchase(self):
         if self.order_line_ids and self.supplier_id:
             # En este instante se va a crear el pedido de compra
             order_id = self.env['purchase.order'].create({
-                'partner_id': self.supplier_id
+                'partner_id': self.supplier_id.id
             })
 
-            self.order_line_ids.write({'order_id': order_id})
+            self.order_line_ids.write({'order_id': order_id.id})
 
-        return {
-            'name': 'Purchase Order',
-            'res_model': 'purchase.order',
-            'res_id': order_id.id,
-            'type': 'ir.actions.act_window',
-            'target': 'inline',
-        }
+            action = self.env.ref('purchase.purchase_form_action').read()[0]
+
+            action.update({
+                'domain': [('id', 'in', [order_id.id])]
+            })
+
+        return action
 
 
