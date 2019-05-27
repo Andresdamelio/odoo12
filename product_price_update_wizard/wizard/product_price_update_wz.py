@@ -25,22 +25,15 @@ class ProductPriceUpdateWizard(models.TransientModel):
 
         return res
 
-    # @api.multi
-    # def create_purchase(self):
-    #     if self.order_line_ids and self.supplier_id:
-    #         # En este instante se va a crear el pedido de compra
-    #         order_id = self.env['purchase.order'].create({
-    #             'partner_id': self.supplier_id.id
-    #         })
-    #
-    #         self.order_line_ids.write({'order_id': order_id.id})
-    #
-    #         action = self.env.ref('purchase.purchase_form_action').read()[0]
-    #
-    #         action.update({
-    #             'domain': [('id', 'in', [order_id.id])]
-    #         })
-    #
-    #     return action
+    def update_price(self):
+        if self.price_usd and self.products_ids:
+            self.products_ids.write({'list_price': 1*self.price_usd})
+            action = self.env.ref('product.product_product_tree_view').read()[0]
+
+            action.update({
+                'domain': [('id', 'in', [self.products_ids.id])]
+            })
+
+        return action
 
 
